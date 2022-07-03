@@ -8,7 +8,7 @@ Notebook init
 
 pip install kafka-python
 
-<code>
+```python
 from kafka import KafkaConsumer
 import json
 
@@ -31,7 +31,7 @@ for message in consumer:
                             message.offset,
                             message.value))
 
-</code>
+```
 
 So far, connecting to broker container for topic list, but not yet consuming messages successfully
 
@@ -60,10 +60,14 @@ To access the server, open this file in a browser:
      or http://127.0.0.1:8888/lab?token=e88a42b8888956c88e861b42261bde1bbee0119bba310220
 
 FYI Running this on Windows for now, with Docker Desktop
+
 Needs make:
 :::::::::::::::::
 Install make for windows
 :::::::::::::::::
+
 https://sourceforge.net/projects/gnuwin32/
+
 #actually have 'make' command
+
 Winget install GnuWin32.make
