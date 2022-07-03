@@ -1,6 +1,4 @@
-# kakfa-clients
-
-https://github.com/conduktor/kafka-stack-docker-compose/blob/master/full-stack.yml
+# WIP: Connecting to broker container for topic list, but not yet consuming messages successfully
 
 :::::::::::::::
 Notebook init
@@ -33,7 +31,6 @@ for message in consumer:
 
 ```
 
-So far, connecting to broker container for topic list, but not yet consuming messages successfully
 
 ::::::::::
 CLI for creating topic, consuming, producing
@@ -59,7 +56,9 @@ To access the server, open this file in a browser:
         http://54796b0871df:8888/lab?token=e88a42b8888956c88e861b42261bde1bbee0119bba310220
      or http://127.0.0.1:8888/lab?token=e88a42b8888956c88e861b42261bde1bbee0119bba310220
 
-FYI Running this on Windows for now, with Docker Desktop
+**Running this on Windows for now, with Docker Desktop**
+
+https://github.com/conduktor/kafka-stack-docker-compose/blob/master/full-stack.yml
 
 Needs make:
 :::::::::::::::::
