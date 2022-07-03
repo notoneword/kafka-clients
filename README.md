@@ -5,10 +5,10 @@ https://github.com/conduktor/kafka-stack-docker-compose/blob/master/full-stack.y
 :::::::::::::::
 Notebook init
 :::::::::::::::
-#
+
 pip install kafka-python
 
-#
+<code>
 from kafka import KafkaConsumer
 import json
 
@@ -23,29 +23,36 @@ consumer = KafkaConsumer(
   )
 
 print(consumer.topics())
-# So far, connecting to broker container for topic list, but not yet consuming messages successfully
 
-# consumer.subscribe(topics='hello_world')
-# for message in consumer:  
-#     print ("In Loop")
-#     print ("%d:%d: v=%s" % (message.partition,
-#                             message.offset,
-#                             message.value))
+consumer.subscribe(topics='hello_world')
+for message in consumer:  
+    print ("In Loop")
+    print ("%d:%d: v=%s" % (message.partition,
+                            message.offset,
+                            message.value))
 
+</code>
+
+So far, connecting to broker container for topic list, but not yet consuming messages successfully
 
 ::::::::::
 CLI for creating topic, consuming, producing
 ::::::::::
 
 docker exec broker kafka-topics --bootstrap-server broker:9092 --create --topic hello_world
+
 docker exec --interactive --tty broker kafka-console-producer --bootstrap-server broker:9092 --topic hello_world
+
 docker exec --interactive --tty broker kafka-console-consumer --bootstrap-server broker:9092 --topic hello_world --from-beginning
+
 docker exec broker kafka-topics --bootstrap-server broker:9092 --list
+
 
 
 :::::::::::::::::
 Logging from jupyter to get UI link:
 :::::::::::::::::
+
 To access the server, open this file in a browser:
         file:///home/jovyan/.local/share/jupyter/runtime/jpserver-6-open.html
     Or copy and paste one of these URLs:
